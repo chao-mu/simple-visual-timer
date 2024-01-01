@@ -1,7 +1,19 @@
+// react-router-dom
+import { useNavigate } from "react-router-dom";
+
 // Ours - Styles
 import styles from "./Landing.module.css";
 
+// Ours - Components
+import TimerForm from "@/components/timer/TimerForm";
+
 export default function Landing() {
+  const navigate = useNavigate();
+
+  const onSubmitTime = (time) => {
+    navigate(`/timer?time=${time}`);
+  };
+
   return (
     <main>
       <section className={styles.hero}>
@@ -10,7 +22,7 @@ export default function Landing() {
           Our purposeis to provide a clutter-free timer that embraces minimalism
           in order to not torture neurdivergent brains like ours.
         </p>
-        <button>Start Timer</button>
+        <TimerForm onSubmitTime={onSubmitTime} />
       </section>
     </main>
   );
