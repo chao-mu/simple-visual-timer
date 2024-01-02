@@ -57,7 +57,7 @@ export const pauseClock = (clock) => ({
  * @param {Clock} clock
  * @returns Clock
  */
-export const resumeClock = (clock) => ({
+export const playClock = (clock) => ({
   ...clock,
   startedAt: Date.now(),
   paused: false,

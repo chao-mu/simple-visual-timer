@@ -7,7 +7,7 @@ import {
   getElapsed,
   createClock,
   pauseClock,
-  resumeClock,
+  playClock,
 } from "./clock";
 
 const createMockClock = () => createClock();
@@ -33,7 +33,7 @@ describe("Clock", () => {
   });
 
   test("getElapsed/setElapsed symetry, initial state, running", () => {
-    const clock = resumeClock(createMockClock());
+    const clock = playClock(createMockClock());
 
     const elapsed = getElapsed(clock);
     const newClock = setElapsed(clock, { elapsed });
@@ -42,7 +42,7 @@ describe("Clock", () => {
   });
 
   test("getElapsed/setElapsed symetry, non-zero elapsed, running", () => {
-    const clock = resumeClock(createMockClock());
+    const clock = playClock(createMockClock());
     const expectedElapsed = 1000;
 
     const updatedClock = setElapsed(clock, { elapsed: expectedElapsed });
@@ -62,7 +62,7 @@ describe("Clock", () => {
     expect(getElapsed(clock)).toBe(0);
 
     // Resume the clock
-    clock = resumeClock(clock);
+    clock = playClock(clock);
 
     // Pass some time
     const atleastElapsed = 1000;
@@ -74,7 +74,7 @@ describe("Clock", () => {
 
   test("setElapsed to zero while running should not stop time keeping after resume", () => {
     // Start a paused clock
-    let clock = resumeClock(createMockClock());
+    let clock = playClock(createMockClock());
 
     // Set elapsed to 0
     clock = setElapsed(clock, { elapsed: 0 });

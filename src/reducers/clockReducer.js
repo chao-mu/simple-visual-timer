@@ -1,12 +1,5 @@
-import { useReducer } from "react";
-
 // Types - Clock
-import {
-  createClock,
-  pauseClock,
-  resumeClock,
-  setElapsed,
-} from "@/types/clock";
+import { createClock, pauseClock, playClock, setElapsed } from "@/types/clock";
 
 const initialState = createClock();
 
@@ -17,7 +10,7 @@ const initialState = createClock();
  * @readonly
  */
 export const ClockActionType = {
-  RESUME: "RESUME",
+  PLAY: "PLAY",
   PAUSE: "PAUSE",
   RESET: "RESET",
   RESTART: "RESTART",
@@ -32,8 +25,8 @@ export const ClockActionType = {
  */
 export const clockReducer = (state, { type, payload }) => {
   switch (type) {
-    case ClockActionType.RESUME: {
-      return resumeClock(state);
+    case ClockActionType.PLAY: {
+      return playClock(state);
     }
     case ClockActionType.PAUSE: {
       return pauseClock(state);
