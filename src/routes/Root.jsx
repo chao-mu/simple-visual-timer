@@ -2,12 +2,12 @@
 import { Outlet } from "react-router-dom";
 
 // Ours - Providers
-import ClockProvider from "@/features/timer/contexts/ClockProvider";
+import TimerProvider from "@/features/timer/contexts/TimerProvider";
 
 export default function Root() {
   return (
-    <ClockProvider>
+    <TimerProvider>
       <Outlet />
-    </ClockProvider>
+    </TimerProvider>
   );
 }

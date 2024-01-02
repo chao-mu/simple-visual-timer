@@ -1,6 +1,6 @@
 // Ours - Clocks
-import useClockContext from "@/features/timer/hooks/useClockContext";
-import useClockDispatchContext from "@/features/timer/hooks/useClockDispatchContext";
+import useTimerContext from "@/features/timer/hooks/useTimerContext";
+import useTimerDispatchContext from "@/features/timer/hooks/useTimerDispatchContext";
 
 import {
   FaPlay as PlayIcon,
@@ -8,16 +8,18 @@ import {
   FaStop as StopIcon,
 } from "react-icons/fa";
 
-import { ClockActionType } from "@/features/timer/reducers/clockReducer";
+import { TimerActionType } from "@/features/timer/reducers/timerReducer";
 
 export default function TimerControls() {
-  const { paused } = useClockContext();
+  const {
+    clock: { paused },
+  } = useTimerContext();
 
-  const dispatch = useClockDispatchContext();
+  const dispatch = useTimerDispatchContext();
 
-  const handlePlay = () => dispatch({ type: ClockActionType.PLAY });
-  const handlePause = () => dispatch({ type: ClockActionType.PAUSE });
-  const handleStop = () => dispatch({ type: ClockActionType.RESET });
+  const handlePlay = () => dispatch({ type: TimerActionType.PLAY });
+  const handlePause = () => dispatch({ type: TimerActionType.PAUSE });
+  const handleStop = () => dispatch({ type: TimerActionType.STOP });
 
   return (
     <div>

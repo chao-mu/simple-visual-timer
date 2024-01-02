@@ -10,3 +10,10 @@
  * @property {string} sessionId
  * @property {string} subkey
  */
+
+/**
+ * @typedef {Object} Timer
+ * @property {number} duration
+ * @property {Clock} clock
+ * @property {boolean} completed
+ */
