@@ -7,7 +7,7 @@ import { serializeStorageKey } from "@/features/storage/utils";
 /**
  * Use this session's storage with the given key.
  *
- * @param {import("@/utils/storage").StorageKey} storageKey
+ * @param {StorageKey} storageKey
  * @param {Object} defaultState
  */
 const useStorage = (storageKey, defaultState) => {

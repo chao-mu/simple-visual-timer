@@ -23,7 +23,7 @@ export const ClockActionType = {
 };
 
 /**
- * @param {import("@/types/clock").Clock} state
+ * @param {Clock} state
  * @param {Object} action
  * @param {ClockActionType} action.type
  * @param {any} [action.payload]

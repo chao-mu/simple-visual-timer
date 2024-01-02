@@ -1,12 +1,6 @@
 // uuid
 import { v4 as uuidv4 } from "uuid";
 
-/**
- * @typedef {Object} StorageKey
- * @property {string} sessionId
- * @property {string} subkey
- */
-
 export const sessionIdSessionStorageKey = "sessionId";
 
 const sessionIdField = "session";
@@ -81,7 +75,7 @@ export const deserializeStorageKey = (storageKey) => {
     parsedSubkeyField !== subkeyField
   ) {
     throw new Error(
-      `Invalid storage key: ${storageKey}. Parsed: sessionIdFieldName=${parsedSessionIdField}, sessionId=${sessionId}, subkeyFieldName=${parsedSubkeyField}  subkey={subkey}`,
+      `Invalid storage key: ${storageKey}. Parsed: sessionStorageKeyPrefix=${parsedStorageKeyPrefix} sessionIdFieldName=${parsedSessionIdField}, sessionId=${sessionId}, subkeyFieldName=${parsedSubkeyField}  subkey={subkey}`,
     );
   }
 

@@ -1,10 +1,3 @@
-/**
- * @typedef {Object} Clock
- * @property {boolean} paused
- * @property {number | null} startedAt
- * @property {number} elapsedAtPause
- */
-
 /** @returns {Clock} */
 export const createClock = () => ({
   startedAt: null,
