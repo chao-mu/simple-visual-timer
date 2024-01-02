@@ -5,11 +5,13 @@ import ClockProvider from "@/contexts/clock/ClockProvider";
 import VisualTimer from "@/components/timer/VisualTimer";
 import TimerControls from "@/components/timer/TimerControls";
 
+// Ours - Styles
+import styles from "./Timer.module.css";
+
 export default function Timer() {
   return (
-    <main>
+    <main className={styles["main"]}>
       <ClockProvider>
-        <h1>Timer</h1>
         <VisualTimer />
         <TimerControls />
       </ClockProvider>
