@@ -3,24 +3,37 @@ import {
   useClockDispatchContext,
 } from "@/contexts/clock/ClockContext";
 
+import {
+  FaPlay as PlayIcon,
+  FaPause as PauseIcon,
+  FaStop as StopIcon,
+} from "react-icons/fa";
+
+import { ClockActionType } from "@/reducers/clockReducer";
+
 export default function TimerControls() {
   const { paused } = useClockContext();
+
   const dispatch = useClockDispatchContext();
 
-  const handleResume = () => dispatch({ type: "RESUME" });
-  const handleStop = () => dispatch({ type: "STOP" });
-  const handlePause = () => dispatch({ type: "PAUSE" });
+  const handlePlay = () => dispatch({ type: ClockActionType.PLAY });
+  const handlePause = () => dispatch({ type: ClockActionType.PAUSE });
+  const handleStop = () => dispatch({ type: ClockActionType.RESET });
 
   return (
     <div>
-      <button onClick={handleResume} disabled={!paused}>
-        Start
-      </button>
-      <button onClick={handlePause} disabled={!paused}>
-        Pause
-      </button>
-      <button onClick={handleStop} disabled={paused}>
-        Stop
+      {paused && (
+        <button onClick={handlePlay}>
+          <PlayIcon />
+        </button>
+      )}
+      {!paused && (
+        <button onClick={handlePause}>
+          <PauseIcon />
+        </button>
+      )}
+      <button onClick={handleStop}>
+        <StopIcon />
       </button>
     </div>
   );
