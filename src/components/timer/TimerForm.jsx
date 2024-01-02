@@ -4,6 +4,9 @@ import { useForm } from "react-hook-form";
 // Ours - Utils
 import { timeInWords } from "@/utils/time";
 
+// Ours - Styles
+import styles from "./TimerForm.module.css";
+
 export default function TimerForm({ onSubmitTime }) {
   const { register, handleSubmit } = useForm();
 
@@ -31,8 +34,8 @@ export default function TimerForm({ onSubmitTime }) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
+    <form className={styles["form"]} onSubmit={handleSubmit(onSubmit)}>
+      <div className={styles["form-group"]}>
         <label htmlFor="time">Timer Length</label>
 
         <select {...register("time", { required: true })}>
