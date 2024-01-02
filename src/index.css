@@ -33,3 +33,9 @@
   --border-radius-lg: 12px;
   --border-radius-xl: 16px;
 }
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
