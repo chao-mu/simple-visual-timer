@@ -2,17 +2,17 @@
 import { useState } from "react";
 
 // Ours - Components
-import VisualTimer from "@/components/timer/VisualTimer";
-import TimerControls from "@/components/timer/TimerControls";
+import VisualTimer from "@/features/timer/components/VisualTimer";
+import TimerControls from "@/features/timer/components/TimerControls";
 
 // Ours - Contexts
-import { useClockContext } from "@/contexts/clock/ClockContext";
+import { useClockContext } from "@/features/timer/contexts/ClockContext";
 
 // Ours - Hooks
-import useInterval from "@/hooks/useInterval";
+import useInterval from "@/common/hooks/useInterval";
 
 // Ours - Types
-import { getElapsed } from "@/types/clock";
+import { getElapsed } from "@/features/timer/utils/clock";
 
 // Ours - Styles
 import styles from "./Timer.module.css";

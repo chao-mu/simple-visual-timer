@@ -8,7 +8,7 @@ import {
   getOrCreateSessionId,
   clearSessionId,
   sessionIdSessionStorageKey,
-} from "./storage";
+} from "./utils";
 
 const createMockStorageKey = ({
   sessionId = "abc123",

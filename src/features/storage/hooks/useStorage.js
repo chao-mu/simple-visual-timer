@@ -2,7 +2,7 @@
 import { useLocalStorage } from "@uidotdev/usehooks";
 
 // Ours - Utils
-import { serializeStorageKey } from "@/utils/storage";
+import { serializeStorageKey } from "@/features/storage/utils";
 
 /**
  * Use this session's storage with the given key.

@@ -5,7 +5,7 @@ import { vi, beforeEach, describe, expect, test } from "vitest";
 import { clockReducer, ClockActionType } from "./clockReducer";
 
 // Ours - Types
-import { createClock, getElapsed } from "@/types/clock";
+import { createClock, getElapsed } from "@/features/timer/utils/clock";
 
 const createMockClock = () => createClock();
 

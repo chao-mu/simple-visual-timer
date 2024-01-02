@@ -1,5 +1,10 @@
 // Types - Clock
-import { createClock, pauseClock, playClock, setElapsed } from "@/types/clock";
+import {
+  createClock,
+  pauseClock,
+  playClock,
+  setElapsed,
+} from "@/features/timer/utils/clock";
 
 const initialState = createClock();
 

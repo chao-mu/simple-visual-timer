@@ -1,18 +1,13 @@
 // Ours - Contexts
-import {
-  ClockContext,
-  ClockDispatchContext,
-} from "@/contexts/clock/ClockContext";
+import { ClockContext, ClockDispatchContext } from "./ClockContext";
 
-// Ours - Reducer
-import { clockReducer } from "@/reducers/clockReducer";
+// Ours - Clock
+import { clockReducer } from "@/features/timer/reducers/clockReducer";
+import { createClock, pauseClock } from "@/features/timer/utils/clock";
 
-// Ours - Hooks
-import useSessionReducer from "@/hooks/useSessionReducer";
-import useInterval from "@/hooks/useInterval";
-
-// Ours - Types
-import { createClock, pauseClock } from "@/types/clock";
+// Ours - Storage
+import useSessionReducer from "@/features/storage/hooks/useSessionReducer";
+import useInterval from "@/common/hooks/useInterval";
 
 export default function ClockProvider({ children }) {
   const [clock, dispatch, save] = useSessionReducer({
