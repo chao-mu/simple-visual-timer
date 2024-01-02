@@ -9,22 +9,28 @@
 }
 
 :root {
-  /* Fluid font sizes calculated with https://www.fluid-type-scale.com/ */
-  --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
-  --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-  --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
-  --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
-  --font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
-  --font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
-  --font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+  --font-size-xs: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+  --font-size-sm: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+  --font-size-md: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --font-size-lg: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+  --font-size-xl: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+  --font-size-2xl: clamp(1.9438rem, 1.7707rem + 0.8652vw, 2.4413rem);
+  --font-size-3xl: clamp(2.3325rem, 2.0823rem + 1.2511vw, 3.0519rem);
+  --font-size-4xl: clamp(2.7994rem, 2.4461rem + 1.7663vw, 3.815rem);
 
-  --spacing-xxs: 0.125rem;
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 0.75rem;
-  --spacing-lg: 1rem;
+  --spacing-xxs: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
-  --spacing-xxl: 4rem;
+  --spacing-xxl: 3rem;
+
+  --font-weight-thin: 100;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
 
   --border-radius-none: 0;
   --border-radius-xs: 2px;
@@ -32,6 +38,12 @@
   --border-radius-md: 8px;
   --border-radius-lg: 12px;
   --border-radius-xl: 16px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
 }
 
 #root {
