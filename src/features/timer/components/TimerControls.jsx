@@ -1,7 +1,6 @@
-import {
-  useClockContext,
-  useClockDispatchContext,
-} from "@/features/timer/contexts/ClockContext";
+// Ours - Clocks
+import useClockContext from "@/features/timer/hooks/useClockContext";
+import useClockDispatchContext from "@/features/timer/hooks/useClockDispatchContext";
 
 import {
   FaPlay as PlayIcon,
