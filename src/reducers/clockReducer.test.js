@@ -26,7 +26,7 @@ describe("clockReducer", () => {
 
     // Start the clock
     clock = clockReducer(clock, {
-      type: ClockActionType.RESUME,
+      type: ClockActionType.PLAY,
     });
 
     expect(clock.paused).toBe(false);
@@ -48,7 +48,7 @@ describe("clockReducer", () => {
 
     // Resume the clock
     clock = clockReducer(clock, {
-      type: ClockActionType.RESUME,
+      type: ClockActionType.PLAY,
     });
 
     // Should be unpaused
