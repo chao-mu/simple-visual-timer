@@ -1,13 +1,12 @@
 // React
 import { useState } from "react";
 
-// Ours - Components
-
-// Ours - Clocks
+// Ours - Timers
 import useTimerContext from "@/features/timer/hooks/useTimerContext";
 import { getElapsed } from "@/features/timer/utils/clock";
 import VisualTimer from "@/features/timer/components/VisualTimer";
 import TimerControls from "@/features/timer/components/TimerControls";
+import TimeDisplay from "@/features/timer/components/TimeDisplay";
 
 // Ours - Hooks
 import useInterval from "@/common/hooks/useInterval";
@@ -29,6 +28,7 @@ export default function Timer() {
   return (
     <main className={styles["main"]}>
       <VisualTimer progress={progress} />
+      <TimeDisplay timeMs={elapsed} showMs={true} />
       <TimerControls />
     </main>
   );
