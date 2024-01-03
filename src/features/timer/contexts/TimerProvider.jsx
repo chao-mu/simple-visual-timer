@@ -3,15 +3,14 @@ import { useSearchParams } from "react-router-dom";
 
 // Ours - Timer
 import { TimerContext, TimerDispatchContext } from "./TimerContext";
-import {
-  timerReducer,
-  TimerActionType,
-} from "@/features/timer/reducers/timerReducer";
-import { createClock, pauseClock } from "@/features/timer/utils/clock";
+import { timerReducer, TimerActionType } from "../reducers/timerReducer";
+import { createClock, pauseClock } from "../utils/clock";
 
 // Ours - Storage
-import useSessionReducer from "@/features/storage/hooks/useSessionReducer";
-import useInterval from "@/common/hooks/useInterval";
+import { useSessionReducer } from "@/features/storage";
+
+// Ours - Hooks
+import { useInterval } from "@/common/hooks";
 
 export default function TimerProvider({ children }) {
   const [searchParams] = useSearchParams();

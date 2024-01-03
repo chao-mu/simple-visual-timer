@@ -1,8 +1,8 @@
 // react-router-dom
 import { Outlet } from "react-router-dom";
 
-// Ours - Providers
-import TimerProvider from "@/features/timer/contexts/TimerProvider";
+// Ours - Timer
+import { TimerProvider } from "@/features/timer";
 
 export default function Root() {
   return (

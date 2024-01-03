@@ -1,10 +1,5 @@
-// Ours - Clocks
-import {
-  createClock,
-  pauseClock,
-  getElapsed,
-  playClock,
-} from "@/features/timer/utils/clock";
+// Ours - Timer
+import { createClock, pauseClock, getElapsed, playClock } from "../utils/clock";
 
 /**
  * Possible action types for timerReducer

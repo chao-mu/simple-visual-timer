@@ -7,7 +7,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import routes from "@/routes/config";
 
 // Ours - Components
-import { FallbackComponent } from "@/common/components/system/FallbackPage";
+import { FallbackComponent } from "@/common/components";
 
 const router = createBrowserRouter(routes);
 

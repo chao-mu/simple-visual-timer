@@ -2,7 +2,7 @@
 import { useForm } from "react-hook-form";
 
 // Ours - Utils
-import { timeInWords } from "@/common/utils/time";
+import { timeInWords } from "@/common/utils";
 
 // Ours - Styles
 import styles from "./TimerForm.module.css";

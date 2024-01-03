@@ -1,11 +1,11 @@
 // react-router-dom
 import { useNavigate } from "react-router-dom";
 
+// Ours - Timer
+import { TimerForm } from "@/features/timer";
+
 // Ours - Styles
 import styles from "./Landing.module.css";
-
-// Ours - Components
-import TimerForm from "@/features/timer/components/TimerForm";
 
 export default function Landing() {
   const navigate = useNavigate();

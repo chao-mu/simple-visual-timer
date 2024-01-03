@@ -1,17 +1,18 @@
 // React
 import { useState } from "react";
 
-// Ours - Timers
-import useTimerContext from "@/features/timer/hooks/useTimerContext";
-import { getElapsed } from "@/features/timer/utils/clock";
-import VisualTimer from "@/features/timer/components/VisualTimer";
-import TimerControls from "@/features/timer/components/TimerControls";
-import TimeDisplay from "@/features/timer/components/TimeDisplay";
+// Ours - Timer
+import {
+  useTimerContext,
+  getElapsed,
+  VisualTimer,
+  TimerControls,
+  TimeDisplay,
+} from "@/features/timer";
 
 // Ours - Hooks
-import useInterval from "@/common/hooks/useInterval";
+import { useInterval } from "@/common/hooks";
 
-// Ours - Styles
 import styles from "./Timer.module.css";
 
 export default function Timer() {

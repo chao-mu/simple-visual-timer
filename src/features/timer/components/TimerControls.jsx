@@ -1,14 +1,13 @@
-// Ours - Clocks
-import useTimerContext from "@/features/timer/hooks/useTimerContext";
-import useTimerDispatchContext from "@/features/timer/hooks/useTimerDispatchContext";
+// Ours - Timer
+import useTimerContext from "../hooks/useTimerContext";
+import useTimerDispatchContext from "../hooks/useTimerDispatchContext";
+import { TimerActionType } from "../reducers/timerReducer";
 
 import {
   FaPlay as PlayIcon,
   FaPause as PauseIcon,
   FaStop as StopIcon,
 } from "react-icons/fa";
-
-import { TimerActionType } from "@/features/timer/reducers/timerReducer";
 
 export default function TimerControls() {
   const {

@@ -1,0 +1,1 @@
+export { timeInWords } from "./time";
