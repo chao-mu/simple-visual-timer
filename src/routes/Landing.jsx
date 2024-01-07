@@ -29,8 +29,8 @@ export default function Landing() {
       <section className={styles.hero}>
         <h1 className={styles["hero__title"]}>Simple Visual Timer</h1>
         <p>
-          Our purposeis to provide a clutter-free timer that embraces minimalism
-          in order to not torture neurdivergent brains like ours.
+          Our purpose is to provide a clutter-free timer that embraces
+          minimalism and allows you to focus on the task at hand.
         </p>
         <TimerForm onSubmitTime={onSubmitTime} />
       </section>
