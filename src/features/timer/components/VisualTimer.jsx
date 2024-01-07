@@ -1,3 +1,8 @@
+import styles from "./VisualTimer.module.css";
+
 export default function VisualTimer({ progress }) {
-  return <div>{progress}</div>;
+  const style = {
+    "--progress": progress * 100,
+  };
+  return <div className={styles["pie"]} style={style}></div>;
 }

@@ -1,0 +1,19 @@
+.pie {
+  aspect-ratio: 1;
+  position: relative;
+  --fill-color: purple;
+  --bg-color: transparent;
+  width: 100%;
+  max-width: 200px;
+}
+
+.pie:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  background: conic-gradient(
+    var(--fill-color) calc(var(--progress) * 1%),
+    var(--bg-color) 0
+  );
+}
