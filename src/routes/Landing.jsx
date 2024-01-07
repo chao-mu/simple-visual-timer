@@ -2,7 +2,11 @@
 import { useNavigate } from "react-router-dom";
 
 // Ours - Timer
-import { TimerForm } from "@/features/timer";
+import {
+  TimerForm,
+  useTimerDispatchContext,
+  TimerActionType,
+} from "@/features/timer";
 
 // Ours - Styles
 import styles from "./Landing.module.css";
@@ -10,7 +14,13 @@ import styles from "./Landing.module.css";
 export default function Landing() {
   const navigate = useNavigate();
 
+  const dispatch = useTimerDispatchContext();
+
   const onSubmitTime = (time) => {
+    dispatch({
+      type: TimerActionType.SET_DURATION,
+      payload: { duration: time },
+    });
     navigate(`/timer?time=${time}`);
   };
 

@@ -58,6 +58,7 @@ export const timerReducer = (state, { type, payload }) => {
       return {
         ...state,
         duration,
+        completed: false,
         clock: createClock(),
       };
     }
