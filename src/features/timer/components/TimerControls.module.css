@@ -1,0 +1,10 @@
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  padding: var(--spacing-xxs);
+}
+
+.timer-controls {
+  display: flex;
+  gap: var(--spacing-xxs);
+}

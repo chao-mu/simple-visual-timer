@@ -3,6 +3,9 @@ import useTimerContext from "../hooks/useTimerContext";
 import useTimerDispatchContext from "../hooks/useTimerDispatchContext";
 import { TimerActionType } from "../reducers/timerReducer";
 
+// Ours - Style
+import styles from "./TimerControls.module.css";
+
 import {
   FaPlay as PlayIcon,
   FaPause as PauseIcon,
@@ -21,18 +24,18 @@ export default function TimerControls() {
   const handleStop = () => dispatch({ type: TimerActionType.STOP });
 
   return (
-    <div>
+    <div className={styles["timer-controls"]}>
       {paused && (
-        <button onClick={handlePlay}>
+        <button className={styles["icon-button"]} onClick={handlePlay}>
           <PlayIcon />
         </button>
       )}
       {!paused && (
-        <button onClick={handlePause}>
+        <button className={styles["icon-button"]} onClick={handlePause}>
           <PauseIcon />
         </button>
       )}
-      <button onClick={handleStop}>
+      <button className={styles["icon-button"]} onClick={handleStop}>
         <StopIcon />
       </button>
     </div>
