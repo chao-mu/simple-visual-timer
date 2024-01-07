@@ -1,10 +1,9 @@
 .pie {
   aspect-ratio: 1;
+  flex-grow: 1;
   position: relative;
   --fill-color: purple;
   --bg-color: transparent;
-  width: 100%;
-  max-width: 200px;
 }
 
 .pie:before {

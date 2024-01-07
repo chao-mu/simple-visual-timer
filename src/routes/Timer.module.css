@@ -1,8 +1,12 @@
 .main {
+  --padding: var(--spacing-md);
   display: flex;
   flex-grow: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: var(--spacing-md);
+  max-width: calc(min(100dvh, 100dvw) - var(--padding));
+  max-height: calc(min(100dvh, 100dvw) - var(--padding));
+  padding: var(--padding);
 }
