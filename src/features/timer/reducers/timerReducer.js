@@ -24,9 +24,12 @@ export const TimerActionType = {
 export const timerReducer = (state, { type, payload }) => {
   switch (type) {
     case TimerActionType.PLAY: {
+      const { completed } = state;
+      const clock = completed ? createClock() : state.clock;
       return {
         ...state,
-        clock: playClock(state.clock),
+        completed: false,
+        clock: playClock(clock),
       };
     }
     case TimerActionType.PAUSE: {
