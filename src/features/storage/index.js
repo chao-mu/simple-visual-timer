@@ -1,1 +1,2 @@
-export { default as useSessionReducer } from "./hooks/useSessionReducer";
+export { default as useStorage } from "./hooks/useStorage";
+export { createSessionStorageKey } from "./utils";

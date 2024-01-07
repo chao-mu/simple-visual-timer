@@ -17,6 +17,9 @@ export const getAllStorageKeys = () => {
   return keys;
 };
 
+export const storeSessionValue = (subkey, value) =>
+  storeValue({ sessionId: getOrCreateSessionId(), subkey }, value);
+
 export const storeValue = (storageKey, value) =>
   localStorage.setItem(serializeStorageKey(storageKey), JSON.stringify(value));
 
@@ -46,6 +49,16 @@ export const getOrCreateSessionId = () => {
 export const clearSessionId = () => {
   sessionStorage.removeItem("sessionId");
 };
+
+/**
+ * Create a new storage key for this session.
+ * @param {string} subkey
+ * @returns {StorageKey}
+ */
+export const createSessionStorageKey = (subkey) => ({
+  sessionId: getOrCreateSessionId(),
+  subkey,
+});
 
 /**
  * @param {StorageKey} param0

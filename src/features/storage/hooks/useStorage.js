@@ -7,13 +7,15 @@ import { serializeStorageKey } from "../utils";
 /**
  * Use this session's storage with the given key.
  *
+ * @template T - Type of value.
+ *
  * @param {StorageKey} storageKey
- * @param {Object} defaultState
+ * @param {T} initialState
  */
-const useStorage = (storageKey, defaultState) => {
+const useStorage = (storageKey, initialState) => {
   const key = serializeStorageKey(storageKey);
 
-  return useLocalStorage(key, defaultState);
+  return useLocalStorage(key, initialState);
 };
 
 export default useStorage;

@@ -1,3 +1,6 @@
+// React
+import { useReducer } from "react";
+
 // react-router-dom
 import { useSearchParams } from "react-router-dom";
 
@@ -7,27 +10,26 @@ import { timerReducer, TimerActionType } from "../reducers/timerReducer";
 import { createClock, pauseClock } from "../utils/clock";
 
 // Ours - Storage
-import { useSessionReducer } from "@/features/storage";
+import { useStorage, createSessionStorageKey } from "@/features/storage";
 
 // Ours - Hooks
 import { useInterval } from "@/common/hooks";
 
 export default function TimerProvider({ children }) {
   const [searchParams] = useSearchParams();
+  const [initialClock, saveClock] = useStorage(
+    createSessionStorageKey("clock"),
+    createClock(),
+  );
 
-  const [timer, dispatch, save] = useSessionReducer({
-    subkey: "timer",
-    reducer: timerReducer,
-    initialState: {
-      clock: createClock(),
-      duration: Number(searchParams.get("time") || 10000),
-      completed: false,
-    },
-    transform: (timer) => ({ ...timer, clock: pauseClock(timer.clock) }),
+  const [timer, dispatch] = useReducer(timerReducer, {
+    clock: initialClock,
+    duration: Number(searchParams.get("time") || 10000),
+    completed: false,
   });
 
   useInterval(() => {
-    save();
+    saveClock(pauseClock(timer.clock));
   }, 1000);
 
   useInterval(() => {
