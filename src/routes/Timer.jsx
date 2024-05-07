@@ -1,5 +1,5 @@
 // React
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Ours - Timer
 import {
@@ -8,6 +8,8 @@ import {
   VisualTimer,
   TimerControls,
   TimeDisplay,
+  useTimerDispatchContext,
+  TimerActionType,
 } from "@/features/timer";
 
 // Ours - Hooks
@@ -17,7 +19,12 @@ import styles from "./Timer.module.css";
 
 export default function Timer() {
   const { clock, duration } = useTimerContext();
+  const dispatch = useTimerDispatchContext();
   const [elapsed, setElapsed] = useState(0);
+
+  useEffect(() => {
+    dispatch({ type: TimerActionType.PLAY });
+  }, [dispatch]);
 
   useInterval(() => {
     setElapsed(getElapsed(clock));
