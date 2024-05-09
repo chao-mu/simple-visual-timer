@@ -46,7 +46,9 @@ export default function TimerForm({ onSubmitTime }) {
           ))}
         </select>
       </div>
-      <button type="submit">Start</button>
+      <button className={styles["form__submit"]} type="submit">
+        Start
+      </button>
     </form>
   );
 }

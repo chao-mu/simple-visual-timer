@@ -7,6 +7,7 @@ import { FallbackForRouter } from "@/common/components";
 
 // Ours - Routes
 import Root from "./Root";
+import TimerSync from "./TimerSync";
 
 export default [
   {
@@ -22,6 +23,10 @@ export default [
       {
         path: "timer",
         element: <Timer />,
+      },
+      {
+        path: "perpetual",
+        element: <TimerSync />,
       },
     ],
   },

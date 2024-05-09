@@ -4,8 +4,16 @@
   flex-wrap: wrap;
 }
 
+.form-group > label {
+  align-self: center;
+}
+
 .form {
   display: flex;
   gap: var(--spacing-sm);
   flex-wrap: wrap;
+}
+
+.form__submit, .form-group select {
+  padding: var(--spacing-xxs) var(--spacing-xs);
 }

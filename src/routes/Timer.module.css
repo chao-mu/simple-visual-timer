@@ -10,3 +10,7 @@
   max-height: calc(min(100dvh, 100dvw) - var(--padding));
   padding: var(--padding);
 }
+
+.main h1 {
+  font-size: var(--font-size-3xl);
+}

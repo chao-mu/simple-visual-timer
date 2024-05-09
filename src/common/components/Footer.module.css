@@ -1,0 +1,9 @@
+.footer {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.footer__timer-info {
+  display: flex;
+  gap: var(--spacing-xs);
+}

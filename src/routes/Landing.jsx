@@ -1,5 +1,5 @@
 // react-router-dom
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // Ours - Timer
 import {
@@ -11,8 +11,13 @@ import {
 // Ours - Styles
 import styles from "./Landing.module.css";
 
+// Ours - Hooks
+import useNotify from "@/common/hooks/useNotify";
+import { useEffect } from "react";
+
 export default function Landing() {
   const navigate = useNavigate();
+  const [, requestNotify] = useNotify();
 
   const dispatch = useTimerDispatchContext();
 
@@ -24,6 +29,8 @@ export default function Landing() {
     navigate(`/timer?time=${time}`);
   };
 
+  const onPerpetual = () => requestNotify();
+
   return (
     <main className={styles.main}>
       <section className={styles.hero}>
@@ -33,6 +40,12 @@ export default function Landing() {
           minimalism and allows you to focus on the task at hand.
         </p>
         <TimerForm onSubmitTime={onSubmitTime} />
+        <p>
+          Also! Checkout our{" "}
+          <Link onClick={() => onPerpetual()} to="/perpetual">
+            Perpetual Sprint Room
+          </Link>
+        </p>
       </section>
     </main>
   );

@@ -16,6 +16,7 @@ import {
 import { useInterval } from "@/common/hooks";
 
 import styles from "./Timer.module.css";
+import { Footer } from "@/common/components/Footer";
 
 export default function Timer() {
   const { clock, duration } = useTimerContext();
@@ -33,11 +34,16 @@ export default function Timer() {
   const timerEnd = duration;
   const progress = elapsed / timerEnd;
 
+  const clockProgress = {
+    segmentTranspired: elapsed,
+    segmentLength: duration,
+  };
+
   return (
     <main className={styles["main"]}>
       <VisualTimer progress={progress} />
-      <TimeDisplay timeMs={elapsed} showMs={true} />
       <TimerControls />
+      <Footer clockProgress={clockProgress} />
     </main>
   );
 }
