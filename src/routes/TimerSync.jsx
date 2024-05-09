@@ -9,8 +9,8 @@ const Second = 1000 * Ms;
 const Minute = 60 * Second;
 // const Hour = 60 * Minute;
 
-const BreakLength = 5 * Minute;
-const WorkLength = 25 * Minute;
+const BreakLength = 10 * Minute;
+const WorkLength = 50 * Minute;
 const TotalPeriodLength = BreakLength + WorkLength;
 
 function getPeriodTranspired(periodLength) {
@@ -63,14 +63,10 @@ export default function Perpetual() {
     getClockProgress(TotalPeriodLength),
   );
 
-  useEffect(() => {
-    audioRef.current.play();
-  }, []);
-
   useInterval(() => {
     const newProgress = getClockProgress(TotalPeriodLength);
     if (newProgress.kind != clockProgress.kind) {
-      notify("Times Up!", `Next up: ${title}`);
+      notify("Times Up!", `Next up: ${newProgress.title}`);
     }
 
     setClockProgress(newProgress);
